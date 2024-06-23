@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>상세리뷰</title>
+  <link rel="stylesheet" href="../css/review.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function confirmDelete() {
+      if (confirm("정말로 삭제하시겠습니까?")) {
+        document.getElementById("reviewForm").submit();
+      }
+  }
+  </script>
+
+</head>
+<body>
+<div class="container">
+  <form role="form" id="reviewForm" th:object="${reviewForm}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" id="title" th:field="*{title}" class="form-control" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="content">글 작성</label>
+      <textarea id="content" th:field="*{content}" class="form-control" readonly></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>첨부 사진</label>
+      <div>
+        <th:block th:each="photoUrl : ${reviewForm.photoFiles}">
+          <img th:src="@{${photoFiles}}" alt="Uploaded photo" style="max-width: 100px; max-height: 100px;">
+        </th:block>
+      </div>
+    </div>
+
+    <form>
+      <a th:href="@{/myreview/{reviewId}/edit(reviewId=${reviewForm.id})}" class="btn btn-primary">수정하기</a>
+
+      <form id="deleteForm" th:action="@{/reviews/{reviewId}/delete(reviewId=${reviewForm.id})}" method="post">
+        <button type="button" onclick="confirmDelete()" class="btn btn-danger">삭제하기</button>
+    </form>
+  </form>
+  </form>
+</div>
+</body>
+</html>
