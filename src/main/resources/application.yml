@@ -24,9 +24,7 @@ spring:
 
   profiles:
     active: local
-    include:
-      -oauth
-      -secret
+    include: oauth, secret
 
   mail:
     host: smtp.gmail.com
