@@ -7,9 +7,9 @@ spring:
       fail-on-empty-beans: false
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/easyplan
-    username: ENC(LI4LJrPxYczIOaFdbrpOXQ==)
-    password: ENC(xlSIWFT+Y8Xk6G1uTtQY+A==)
+    url: jdbc:mysql://13.209.18.95:3306/easyplan
+    username: ENC(mkER2TW49E8B9Rh9XyCetQ==)
+    password: ENC(n5o33/cX22FQzUWpscI0qA==)
 
   jpa:
     properties:
