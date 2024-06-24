@@ -8,8 +8,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://13.209.18.95:3306/easyplan
-    username: ENC(mkER2TW49E8B9Rh9XyCetQ==)
-    password: ENC(n5o33/cX22FQzUWpscI0qA==)
+    username: ENC(lHyvJHNqS0gQiAgfp+eyyA==)
+    password: ENC(gPzSVynSlzTdwDoacVT4699zQKLBgw3p)
 
   jpa:
     properties:
